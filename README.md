@@ -11,7 +11,7 @@ fastqc &
 Load F1 and R1 datasets into GUI interface.
 Take screen shots of output files:
 
-![F1screenshot.png](/data/F1screenshot.png)
+![/data/U248_1.fq.qz.jpg](/data/U248_1.fq.qz.jpg)
 
 ## 2. Ran Trimmomatic
 ```bash
