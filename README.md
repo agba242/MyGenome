@@ -29,7 +29,7 @@ Counting total number of bases:
 cat fp.fq rp.fq | grep @A00261:902:HGC52DSX7:2: -A 1 | grep -v @A00261:902:HGC52DSX7:2: | grep -v ^- | grep '[AGTCN]' -o | wc -l
 ```
 
-##4. MyGenome Assembly
+**##4. MyGenome Assembly**
 Upload forward and reverse trimmed paired files to the MCC, copy VelvetOptimiser script into directory, and update email using nano.
 ```bash
 cp ../SLURM_SCRIPTS/velvetoptimiser_noclean.sh .
@@ -51,5 +51,5 @@ Use perl to remane the sequence headers to standard format.
 ```bash
 perl /project/farman_s24cs485g/SCRIPTs/SimpleFastaHeaders.pl U248/velvet_U248_103_119_2_noclean/U248.fasta U248
 
-##5. BUSCO
+**##5. BUSCO**
 
