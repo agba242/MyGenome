@@ -23,6 +23,8 @@ java -jar trimmomatic-0.38.jar PE -threads 2 -phred33 -trimlog ../MyGenome/A28/U
 Using the paired, forward reads, total number of paired reads can be counted:
 ```bash
 grep -v '^@' U248_1.fq.gz | awk '{print length ($0)}' |
+```
 Counting total number of bases:
+```bash
 cat fp.fq rp.fq | grep -v CAGAGAGGAT+TCTACTCTGT | grep -v ^- | grep [AGTCN] -oic
 ```
