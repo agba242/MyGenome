@@ -22,9 +22,34 @@ java -jar trimmomatic-0.38.jar PE -threads 2 -phred33 -trimlog ../MyGenome/A28/U
 ## 3. Count number of forawrd reads remaining
 Using the paired, forward reads, total number of paired reads can be counted:
 ```bash
-grep -v '^@' U248_1.fq.gz | awk '{print length ($0)}' |
+grep @A00261:902:HGC52DSX7:2: -A 1 fp.fq | grep -v @A00261:902:HGC52DSX7:2: | grep -v ^- | wc -l
 ```
 Counting total number of bases:
 ```bash
-cat fp.fq rp.fq | grep -v CAGAGAGGAT+TCTACTCTGT | grep -v ^- | grep [AGTCN] -oic
+cat fp.fq rp.fq | grep @A00261:902:HGC52DSX7:2: -A 1 | grep -v @A00261:902:HGC52DSX7:2: | grep -v ^- | grep '[AGTCN]' -o | wc -l
 ```
+
+##4. MyGenome Assembly
+Upload forward and reverse trimmed paired files to the MCC, copy VelvetOptimiser script into directory, and update email using nano.
+```bash
+cp ../SLURM_SCRIPTS/velvetoptimiser_noclean.sh .
+nano velvetoptimiser_noclean.sh
+```
+Run the SLURM on genome assemblies with a step size of 10:
+```bash
+sbatch velvetoptimiser_noclean.sh U248 61 131 10
+```
+Inspect the file to determine a range of values to test with a step size of 2:
+```bash
+cat slurm-21274794.out
+```
+Run the SLURM on genome assemblies with a step size of 2:
+```bash
+sbatch velvetoptimiser_noclean.sh U248 103 119 2
+```
+Use perl to remane the sequence headers to standard format.
+```bash
+perl /project/farman_s24cs485g/SCRIPTs/SimpleFastaHeaders.pl U248/velvet_U248_103_119_2_noclean/U248.fasta U248
+
+##5. BUSCO
+
