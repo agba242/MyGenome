@@ -16,7 +16,7 @@ Take screen shots of output files:
 ## 2. Ran Trimmomatic
 ```bash
 Sequences were trimmed using Trimmomatic:
-```
+```bash
 java -jar trimmomatic-0.38.jar PE -threads 2 -phred33 -trimlog ../MyGenome/A28/U248_1.fq.gz U248_2.fq.gz U248_1_paired.fastq U248_1_unpaired.fastq U248_2_paired.fastq U248_2_unpaired.fastq CROP:280 SLIDINGWINDOW:20:20 MINLEN:120
 ```
 
