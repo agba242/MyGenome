@@ -50,6 +50,7 @@ sbatch velvetoptimiser_noclean.sh U248 103 119 2
 Use perl to remane the sequence headers to standard format.
 ```bash
 perl /project/farman_s24cs485g/SCRIPTs/SimpleFastaHeaders.pl U248/velvet_U248_103_119_2_noclean/U248.fasta U248
+```
 
 **##5. Assessing Genome with BUSCO**
 In the MCC, get the BuscoSingularity.sh script by copying it to the working directory.
