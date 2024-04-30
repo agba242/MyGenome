@@ -39,6 +39,10 @@ Enter screen
 ```bash
 screen -S velvet
 ```
+Run Velvet with the Bcerus file with a range of kmer values:
+```bash
+velvetoptimiser -s 121 -e 201 -x 10 -d Bcereus_velvet_optimal -f '-shortPaired -fastq.gz -separate Br80_S1_L001_R1_001.fastq Br80_S1_L001_R2_001.fastq' -t 1
+```
 Run the SLURM on genome assemblies with a step size of 10:
 ```bash
 sbatch velvetoptimiser_noclean.sh U248 61 131 10
