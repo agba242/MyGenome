@@ -35,6 +35,10 @@ Upload forward and reverse trimmed paired files to the MCC, copy VelvetOptimiser
 cp ../SLURM_SCRIPTS/velvetoptimiser_noclean.sh .
 nano velvetoptimiser_noclean.sh
 ```
+Enter screen
+```bash
+screen -S velvet
+```
 Run the SLURM on genome assemblies with a step size of 10:
 ```bash
 sbatch velvetoptimiser_noclean.sh U248 61 131 10
