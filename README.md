@@ -29,7 +29,7 @@ Counting total number of bases:
 cat fp.fq rp.fq | grep @A00261:902:HGC52DSX7:2: -A 1 | grep -v @A00261:902:HGC52DSX7:2: | grep -v ^- | grep '[AGTCN]' -o | wc -l
 ```
 
-**##4. MyGenome Assembly**
+## 4. MyGenome Assembly
 Upload forward and reverse trimmed paired files to the MCC, copy VelvetOptimiser script into directory, and update email using nano.
 ```bash
 cp ../SLURM_SCRIPTS/velvetoptimiser_noclean.sh .
@@ -59,8 +59,9 @@ Use perl to remane the sequence headers to standard format.
 ```bash
 perl /project/farman_s24cs485g/SCRIPTs/SimpleFastaHeaders.pl U248/velvet_U248_103_119_2_noclean/U248.fasta U248
 ```
+## 5.BLASTing MyGenome
 
-**##5. Assessing Genome with BUSCO**
+## 6. Assessing Genome with BUSCO
 In the MCC, get the BuscoSingularity.sh script by copying it to the working directory.
 ```bash
 scp SLURM_SCRIPTS/BuscoSingularity.sh agba242/
@@ -74,6 +75,4 @@ Analyze the output file:
 cat slurm-21290970.out
 ```
 
-##6. BLASTing MyGenome
-
-##7. Gene Prediction
+## 7. Gene Prediction
