@@ -51,5 +51,20 @@ Use perl to remane the sequence headers to standard format.
 ```bash
 perl /project/farman_s24cs485g/SCRIPTs/SimpleFastaHeaders.pl U248/velvet_U248_103_119_2_noclean/U248.fasta U248
 
-**##5. BUSCO**
+**##5. Assessing Genome with BUSCO**
+In the MCC, get the BuscoSingularity.sh script by copying it to the working directory.
+```bash
+scp SLURM_SCRIPTS/BuscoSingularity.sh agba242/
+```
+Run BUSCO:
+```bash
+sbatch /project/farman_s24cs485g/SLURM_SCRIPTS/BuscoSingularity.sh MyGenome.fasta
+```
+Analyze the output file:
+```bash
+cat slurm-21290970.out
+```
 
+##6. BLASTing MyGenome
+
+##7. Gene Prediction
